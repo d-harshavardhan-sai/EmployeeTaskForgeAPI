@@ -10,11 +10,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-import employeeRoutes from "./routes/employee.routes.js";
-app.use("/api/employees", employeeRoutes);
+import authRoutes from "./routes/auth.routes.js";
+app.use("/api/auth", authRoutes);
 
+import auth from "./middlewares/auth.middleware.js";
+import employeeRoutes from "./routes/employee.routes.js";
 import taskRoutes from "./routes/task.routes.js";
-app.use("/api/tasks", taskRoutes);
+
+app.use("/api/employees", auth, employeeRoutes);
+app.use("/api/tasks", auth, taskRoutes);
 
 app.get("/", (req, res) => {
     res.send("Employee Task Forge API is running...");
