@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // change to deployed URL later
+  baseURL: "https://employeetaskforgeapi.onrender.com/api", 
 });
 
 // Attach JWT token automatically
