@@ -4,7 +4,14 @@
 
 <img src="https://github.com/user-attachments/assets/370d9331-4612-4930-92ab-7e343dd1026d" width="250" alt="EmployeeTaskForge App Preview"/>
 
+<p align="center" style="font-family: 'Segoe UI', Sans-serif; font-size: 1.15rem; color: #0B7285; max-width: 650px; line-height: 1.55;">
+<strong>EmployeeTaskForge</strong> is a full-stack Employee & Task Management System built using the <strong>MERN Stack</strong> with secure <strong>JWT Authentication</strong> and a sleek, professional UI powered by <strong>TailwindCSS + DaisyUI</strong>. It enables organizations to efficiently manage employees, assign tasks, track progress, and improve productivity — all in one platform.
+</p>
+
 ---
+### Video Demo
+https://github.com/user-attachments/assets/df225dc8-7cdc-41bd-83c2-b87456bf01f3
+
 
 ### 📲 Try the Live App  
 🔹 **Frontend (Netlify):** ➡ https://employee-task-forge.netlify.app/ 
@@ -12,18 +19,10 @@
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://employee-task-forge.netlify.app/ &size=150x150" width="150" alt="QR Code to App"/>
 
----
-
-<p align="center" style="font-family: 'Segoe UI', Sans-serif; font-size: 1.15rem; color: #0B7285; max-width: 650px; line-height: 1.55;">
-<strong>EmployeeTaskForge</strong> is a full-stack Employee & Task Management System built using the <strong>MERN Stack</strong> with secure <strong>JWT Authentication</strong> and a sleek, professional UI powered by <strong>TailwindCSS + DaisyUI</strong>. It enables organizations to efficiently manage employees, assign tasks, track progress, and improve productivity — all in one platform.
-</p>
 
 </div>
 
 ---
-
-
-
   
 ##  Tech Stack — EmployeeTaskForge
 
