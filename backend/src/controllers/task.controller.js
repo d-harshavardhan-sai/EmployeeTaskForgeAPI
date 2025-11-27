@@ -2,12 +2,22 @@ import Task from "../models/task.model.js";
 
 export const createTask = async (req, res) => {
     try {
+        const { dueDate } = req.body;
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        if (new Date(dueDate) < today) {
+            return res.status(400).json({ message: "Due date cannot be in the past" });
+        }
+
         const task = await Task.create(req.body);
         res.status(201).json(task);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
 };
+
 
 export const getTasks = async (req, res) => {
     try {
@@ -37,6 +47,17 @@ export const getTaskById = async (req, res) => {
 
 export const updateTask = async (req, res) => {
     try {
+        const { dueDate } = req.body;
+
+        if (dueDate) {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            if (new Date(dueDate) < today) {
+                return res.status(400).json({ message: "Due date cannot be in the past" });
+            }
+        }
+
         const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!task) return res.status(404).json({ message: "Task not found" });
 
@@ -45,6 +66,7 @@ export const updateTask = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
 
 export const deleteTask = async (req, res) => {
     try {
