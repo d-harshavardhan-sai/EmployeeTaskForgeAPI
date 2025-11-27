@@ -1,4 +1,26 @@
 
+#  EmployeeTaskForge – Employee & Task Management System  
+<div align="center">
+
+<img src="https://github.com/user-attachments/assets/370d9331-4612-4930-92ab-7e343dd1026d" width="250" alt="EmployeeTaskForge App Preview"/>
+
+---
+
+### 📲 Try the Live App  
+🔹 **Frontend (Netlify):** ➡ https://employee-task-forge.netlify.app/ 
+🔹 **Backend (Render):** ➡ https://employeetaskforgeapi.onrender.com/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?data=https://employee-task-forge.netlify.app/ &size=150x150" width="150" alt="QR Code to App"/>
+
+---
+
+<p align="center" style="font-family: 'Segoe UI', Sans-serif; font-size: 1.15rem; color: #0B7285; max-width: 650px; line-height: 1.55;">
+<strong>EmployeeTaskForge</strong> is a full-stack Employee & Task Management System built using the <strong>MERN Stack</strong> with secure <strong>JWT Authentication</strong> and a sleek, professional UI powered by <strong>TailwindCSS + DaisyUI</strong>. It enables organizations to efficiently manage employees, assign tasks, track progress, and improve productivity — all in one platform.
+</p>
+
+</div>
+
+---
 
 
 
@@ -55,39 +77,6 @@
 - Fully responsive UI (Dark theme business styled)
 ---
 
-## 📄 License
-This project is currently unlicensed.  
-Feel free to contact me for any questions regarding usage or contributions.
-
----
-
-## 🤝 Contributing
-Contributions are welcome! Please open issues or pull requests for improvements or bug fixes.
-
----
-
-## 📬 Contact
-
-<p align="center">
-  Created by <strong>Harshavardhan Sai Divvala</strong> — <br/><br/>
-  <a href="https://portfolio-harsha-three.vercel.app/">
-    <img src="https://img.shields.io/badge/-Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" />
-  </a>
-  <a href="https://www.linkedin.com/in/d-harshavardhan-sai" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30" style="margin-right:10px;" />
-  </a>
-  <a href="https://www.instagram.com/ha_darling_ha?igsh=djhlbWp4Y2p2aTU5" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="30" />
-  </a>
-</p>
-
-<p align="center">
-  — feel free to reach out!
-</p>
-
- ---
-
-
 
 ## ⚡ Quick Start
 
@@ -142,4 +131,37 @@ EmployeeTaskForgeAPI/
 │   ├── 📄 tailwind.config.js     
 │   └── 📄 postcss.config.js     
 │
-└── 📄 README.md                
+└── 📄 README.md
+```
+## 📄 License
+This project is currently unlicensed.  
+Feel free to contact me for any questions regarding usage or contributions.
+
+---
+
+## 🤝 Contributing
+Contributions are welcome! Please open issues or pull requests for improvements or bug fixes.
+
+---
+
+## 📬 Contact
+
+<p align="center">
+  Created by <strong>Harshavardhan Sai Divvala</strong> — <br/><br/>
+  <a href="https://portfolio-harsha-three.vercel.app/">
+    <img src="https://img.shields.io/badge/-Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+  <a href="https://www.linkedin.com/in/d-harshavardhan-sai" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30" style="margin-right:10px;" />
+  </a>
+  <a href="https://www.instagram.com/ha_darling_ha?igsh=djhlbWp4Y2p2aTU5" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="30" />
+  </a>
+</p>
+
+<p align="center">
+  — feel free to reach out!
+</p>
+
+ ---
+             
