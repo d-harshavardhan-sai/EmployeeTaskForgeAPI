@@ -2,6 +2,8 @@ import { useState } from "react";
 import API from "../services/api";
 import toast from "react-hot-toast";
 import { useNavigate, Link } from "react-router-dom";
+const wakeTime = localStorage.getItem("wakeTime");
+
 
 export default function Login() {
   const navigate = useNavigate();
@@ -35,7 +37,6 @@ export default function Login() {
         <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-
           <div>
             <label className="label">
               <span className="label-text">Email</span>
@@ -74,13 +75,19 @@ export default function Login() {
             {loading ? "Logging in..." : "Login"}
           </button>
 
+          {/* Wake time info */}
+          {wakeTime && (
+            <p className="text-xs text-center opacity-70 mt-3">
+              ⏱ Backend woke in <strong>{wakeTime}s</strong>
+            </p>
+          )}
+
           <p className="text-sm text-center mt-4">
             Don’t have an account?{" "}
             <Link to="/register" className="text-primary font-semibold">
               Register
             </Link>
           </p>
-
         </form>
       </div>
     </div>

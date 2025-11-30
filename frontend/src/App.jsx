@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Employees from "./pages/Employees";
 import Tasks from "./pages/Tasks";
+import ServerWake from "./pages/ServerWake"; // 👈 Updated import
 
 import useAuth from "./hooks/useAuth.jsx";
 
@@ -16,13 +17,17 @@ const ProtectedTasks = useAuth(Tasks);
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-base-300 text-base-content" data-theme="business">
+      <div
+        className="min-h-screen bg-base-300 text-base-content"
+        data-theme="business"
+      >
         <Toaster position="top-right" />
 
         <Routes>
-          <Route path="/" element={<Navigate to="/login" replace />} />
+          {/* Server wake loader */}
+          <Route path="/" element={<ServerWake />} />
 
-          {/* Auth Pages */}
+          {/* Public Auth Pages */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
@@ -30,8 +35,10 @@ export default function App() {
           <Route path="/dashboard" element={<ProtectedDashboard />} />
           <Route path="/employees" element={<ProtectedEmployees />} />
           <Route path="/tasks" element={<ProtectedTasks />} />
-        </Routes>
 
+          {/* Fallback Route */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
