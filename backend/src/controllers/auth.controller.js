@@ -1,50 +1,50 @@
-import Employee from "../models/employee.model.js";
+import User from "../models/user.model.js";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
-export const createEmployee = async (req, res) => {
+export const register = async (req, res) => {
     try {
-        const employee = await Employee.create(req.body);
-        res.status(201).json(employee);
-    } catch (error) {
-        res.status(400).json({ message: error.message });
-    }
-};
+        const { email, password } = req.body;
 
-export const getEmployees = async (req, res) => {
-    try {
-        const employees = await Employee.find();
-        res.status(200).json(employees);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-};
+        const existingUser = await User.findOne({ email });
+        if (existingUser) return res.status(400).json({ message: "Email already exists" });
 
-export const getEmployeeById = async (req, res) => {
-    try {
-        const employee = await Employee.findById(req.params.id);
-        if (!employee) return res.status(404).json({ message: "Employee not found" });
-        res.status(200).json(employee);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-};
+        const hashedPassword = await bcrypt.hash(password, 10);
 
-export const updateEmployee = async (req, res) => {
-    try {
-        const employee = await Employee.findByIdAndUpdate(req.params.id, req.body, {
-            new: true
+        const user = await User.create({
+            email,
+            password: hashedPassword
         });
-        if (!employee) return res.status(404).json({ message: "Employee not found" });
-        res.status(200).json(employee);
+
+        res.status(201).json({ message: "User registered successfully", user });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
 
-export const deleteEmployee = async (req, res) => {
+export const login = async (req, res) => {
     try {
-        const employee = await Employee.findByIdAndDelete(req.params.id);
-        if (!employee) return res.status(404).json({ message: "Employee not found" });
-        res.status(200).json({ message: "Employee deleted successfully" });
+        const { email, password } = req.body;
+
+        const user = await User.findOne({ email });
+        if (!user) return res.status(400).json({ message: "Invalid email or password" });
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) return res.status(400).json({ message: "Invalid email or password" });
+
+        const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
+            expiresIn: "7d"
+        });
+
+        res.status(200).json({
+            message: "Login successful",
+            token,
+            user: {
+                id: user._id,
+                email: user.email,
+                role: user.role
+            }
+        });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
